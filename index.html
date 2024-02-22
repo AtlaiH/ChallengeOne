@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Encriptador</title>
+</head>
+
+<body>
+    <div id="contenedor-logo">
+        <img src="imagenes/logo.svg" alt="alura-latam" id="logo-alura">
+    </div>
+
+    <main id="contenedor-encriptar">
+
+            <textarea placeholder="Ingresa tu texto aquí" id="textarea-encriptar"></textarea>
+            
+            <div class="advertencia">
+                <span class="zondicons--exclamation-solid"></span>
+                <p id="alerta">Solo letras minúsculas y sin acento</p>
+            </div>
+
+            <div class="funcionalidades"> 
+                <input type="button" value="Encriptar" class="btn-funcionalidades" id="btn-encriptar">
+                <input type="button" value="Desencriptar" class="btn-funcionalidades" id="btn-desencriptar">
+            </div> 
+
+    </main>
+
+    <div class="contenedor-resultado">
+        <div id="rectangulo">
+            <img src="imagenes/Muñeco.svg" alt="No texto encotrado" id="muñeco-resultado">
+            <p class="txt-encriptado">Ningún mensaje fue encontrado</p>
+            <br>
+            <p class="txt-encriptado" id="txt-complemento">ingresa el texto que deseas encriptar o desencriptar</p>
+
+        </div>
+    </div>    
+
+</body>
+</html>
