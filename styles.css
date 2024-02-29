@@ -113,7 +113,8 @@ p{
         align-items: center;
     }
     #contenedor-logo{
-        align-self: flex-start;
+        width: 100%;
+        justify-content: flex-start;
     }
     #contenedor-encriptar{
         align-self: flex-start;
