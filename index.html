@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+
+    <!--Enlace al archivo reset para eliminar configuraciones previas del navegador-->
     <link rel="stylesheet" type="text/css" href="reset.css">
+
+    <!-- Enlace al estilo de fuente a usar en el proyecto-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--Enlace a la hoja de estilos styles.css-->
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Encriptador</title>
 </head>
-
+<!--Comienza nuestro cuerpo de la pagina web-->
 <body>
     <div id="contenedor-logo">
         <img src="imagenes/logo.svg" alt="alura-latam" id="logo-alura">
@@ -23,17 +29,24 @@
                 <p id="alerta">Solo letras minúsculas y sin acento</p>
             </div>
             <div class="funcionalidades"> 
-                <input type="button" value="Encriptar" class="btn-funcionalidades" id="btn-encriptar">
-                <input type="button" value="Desencriptar" class="btn-funcionalidades" id="btn-desencriptar">
+                <input type="button" value="Encriptar" class="btn-funcionalidades" id="btn-encriptar" onclick="validarTexto()"/>
+                <input type="button" value="Desencriptar" class="btn-funcionalidades" id="btn-desencriptar" onclick="desencriptarTexto()" />
             </div> 
     </main>
 
     <aside id="contenedor-resultado">
-            <img src="imagenes/Muñeco.svg" alt="No texto encotrado" id="muñeco-resultado">
-            <p class="txt-encriptado">Ningún mensaje fue encontrado</p>
-            <br>
-            <p> Ingrese el texto que desa escribir</p>
+            <img src="imagenes/Muñeco.svg" alt="Buscando-texto" id="muñeco-resultado">
+            <textarea class="txt-encriptado" id="txt-resultado" disabled>Ningún mensaje fue encontrado</textarea>  
+            <p id="txt-complementario">favor ingresa tu texto</p>
+            <div class="btn-copiar" onclick="copy()">
+                <button class="btn-funcionalidades" id="copiar">
+                    <img src="imagenes/copiar.svg" width="20px" height="20px">
+                    Copiar
+                </button>
+            </div>
     </aside>    
+    
+    <script src="script.js"></script>
 
 </body>
 </html>

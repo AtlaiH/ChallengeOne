@@ -27,6 +27,7 @@ body{
     margin-top: 8%;
     width: 95%;
     height: 400px;
+    resize: none;
     font-size: 28px;
     color: #0A3871;
     border: none;
@@ -36,13 +37,12 @@ body{
     color: #0A3871;
 }
 .advertencia{   
+    width: 100%;
     margin-left: 10px;
-    padding: 20px;
     display: flex;
-    align-self: flex-start;
+    padding-left: 40px;
 }
 .zondicons--exclamation-solid {
-    display: inline-block;
     width: 10px;
     height: 10px;
     --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07M9 5v6h2V5zm0 8v2h2v-2z'/%3E%3C/svg%3E");
@@ -56,20 +56,22 @@ body{
     color: #495057;
 }
 #alerta{   
-    background-color: #E5E5E5;
+    background-color: #E5E5E5 ;
     padding-left: 5px;
+    padding-bottom: 10px;
     color: #495057;
     font-size: 10px;
 }
 .funcionalidades{
     width: 100%;    
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }   
 .btn-funcionalidades{
     width: 45%;
     height: 45px;
     border-radius: 15px;
+    cursor: pointer;
 }
 #btn-encriptar{
     color: #D8DFE8;
@@ -87,14 +89,29 @@ body{
     display: flex;
     flex-direction: column;
     width: 30%;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     border-radius: 25px;
     box-shadow: 0px 5px 10sspx lightgray;
 }
 #muñeco-resultado{
     background-color: white;
-    width: 100%;
+    width: 90%;
+}
+.txt-encriptado{
+    display: flex;
+    text-align: center;
+    resize: none;
+    overflow: hidden;
+    width: 90%;
+    font-size: 17px;
+    font-weight: bold;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 30px;
+    outline: none;
+    border: none;
+    background-color: white;
 }
 p{
     display: flex;
@@ -103,9 +120,14 @@ p{
     justify-content: center;
     align-items: center;
 }
-.txt-encriptado{
-    font-weight: bold;
+.btn-copiar{
+    background-color: white;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+/*Formato para los dispositivos moviles (TABLETS)*/
 @media screen and (max-width: 768px) {
     body{
         display: flex;
@@ -131,6 +153,8 @@ p{
         display: none;
     }
 }
+
+/*Formato para los dispositivos moviles (SMARTPHONES)*/
 @media screen and (max-width: 375px) {
     body{
         display: flex;
