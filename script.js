@@ -1,10 +1,12 @@
-//Creamos variable regex, que es una expresion regular
+//Creamos variable y marcamos como expresion regular los valores que no ocuparemos
 var regex = /[áéíóú]/;
+//El botón copiar no se habilitará hasta después
 document.getElementById('copiar').style.display = 'none';
 
 //funcion validar texto
 function validarTexto(){
-    var entradaTexto = document.getElementById('textarea-encriptar').value.toLowerCase(); // Convierte a minúsculas
+     //Creamos una variable entrada de texto y Convierte todo a minúsculas
+    var entradaTexto = document.getElementById('textarea-encriptar').value.toLowerCase(); 
 
     // Verificamos texto no tiene tildes y no esté vacío
     if (regex.test(entradaTexto)) { // Validación texto tildes
@@ -23,10 +25,11 @@ function validarTexto(){
         document.getElementById('muñeco-resultado').style.display = 'block';
         document.getElementById('txt-resultado').textContent = 'Ningún mensaje fue encontrado';
         alert("El texto a encriptar no puede estar vacío.");
-    } else {
+    } else {// si tenemos texto entonces procedemos a encriptar
         //ocultamos los complementos de nuestra vista resultado 
         document.getElementById('txt-complementario').style.display = 'none';
         document.getElementById('muñeco-resultado').style.display = 'none';
+        //Llamamos la funcion encriptarTexto
         encriptarTexto();
         //Mostramos el boton copiar
         document.getElementById('copiar').style.display = 'block';
@@ -55,6 +58,7 @@ function encriptarTexto() {
     txtResultado.textContent = resultado; 
     ajustarTamañoTextarea(txtResultado);
 }
+
 function desencriptarTexto(){
     // Realiza la desencriptación
     var txtResultado = document.getElementById('txt-resultado');
@@ -69,11 +73,13 @@ function desencriptarTexto(){
     txtResultado.textContent = resultadoDesencriptado; 
     ajustarTamañoTextarea(txtResultado);
 }
-//ajustar tamaño de texto resultado
+
+//ajustar tamaño de texto resultado 
 function ajustarTamañoTextarea(textarea) {
     textarea.style.height = 'auto'; // Restaura la altura a 'auto' para obtener la altura deseada
     textarea.style.height = textarea.scrollHeight + 'px'; // Establece la altura según el contenido
-  }
+}
+
 //funcion para copiar al portapapeles
 function copy(){    
     var txtResultado = document.getElementById('txt-resultado');
