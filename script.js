@@ -59,6 +59,7 @@ function encriptarTexto() {
     ajustarTamañoTextarea(txtResultado);
 }
 
+//Funcion desencriptar-prueba
 function desencriptarTexto(){
     // Realiza la desencriptación
     var txtResultado = document.getElementById('txt-resultado');
@@ -83,8 +84,9 @@ function ajustarTamañoTextarea(textarea) {
 //funcion para copiar al portapapeles
 function copy(){    
     var txtResultado = document.getElementById('txt-resultado');
-    var entradaTextoEncriptado = document.getElementById('textarea-desencriptar');
+    var entradaTextoEncriptado = document.getElementById('textarea-encriptar');
     navigator.clipboard.writeText(txtResultado.value);
+    entradaTextoEncriptado.value = '';
 }
 
 
