@@ -33,7 +33,8 @@ function validarTexto(){
         document.getElementById('txt-complementario').style.display = 'block';
         document.getElementById('muñeco-resultado').style.display = 'block';
         document.getElementById('txt-resultado').textContent = 'Ningún mensaje fue encontrado';
-        alert("Por favor, ingresa un texto sin tildes, mayusculas o caracteres especiales antes de encriptar.");
+        alert("Por favor, ingresa un texto sin tildes o caracteres especiales antes de encriptar.");
+        document.getElementById('textarea-encriptar').value ='';
     }
 }
 
