@@ -27,6 +27,7 @@ body{
     align-items: center;
 }
 #textarea-encriptar{
+    text-transform: lowercase;
     margin-top: 8%;
     width: 95%;
     height: 400px;

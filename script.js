@@ -1,5 +1,5 @@
 //Creamos variable y marcamos como expresion regular los valores que no ocuparemos
-var regex = /[áéíóú]/;
+var regex =  /^[a-z\s]+$/;
 //El botón copiar no se habilitará hasta después
 document.getElementById('copiar').style.display = 'none';
 
@@ -9,14 +9,15 @@ function validarTexto(){
     var entradaTexto = document.getElementById('textarea-encriptar').value.toLowerCase(); 
 
     // Verificamos texto no tiene tildes y no esté vacío
-    if (regex.test(entradaTexto)) { // Validación texto tildes
-        //Ocultamos el boton copiar
-        document.getElementById('copiar').style.display = 'none';
-        //mostramos los complementos de nuestra vista resultado 
-        document.getElementById('txt-complementario').style.display = 'block';
-        document.getElementById('muñeco-resultado').style.display = 'block';
-        document.getElementById('txt-resultado').textContent = 'Ningún mensaje fue encontrado';
-        alert("Por favor, ingresa un texto sin tildes antes de encriptar.");
+    if (regex.test(entradaTexto)) { // si tenemos texto entonces procedemos a encriptar
+        //ocultamos los complementos de nuestra vista resultado 
+        document.getElementById('txt-complementario').style.display = 'none';
+        document.getElementById('muñeco-resultado').style.display = 'none';
+        //Llamamos la funcion encriptarTexto
+        encriptarTexto();
+        //Mostramos el boton copiar
+        document.getElementById('copiar').style.display = 'block';
+
     } else if (entradaTexto.trim() === "") { // Validación texto vacío
         //Ocultamos el boton copiar
         document.getElementById('copiar').style.display = 'none';
@@ -25,14 +26,14 @@ function validarTexto(){
         document.getElementById('muñeco-resultado').style.display = 'block';
         document.getElementById('txt-resultado').textContent = 'Ningún mensaje fue encontrado';
         alert("El texto a encriptar no puede estar vacío.");
-    } else {// si tenemos texto entonces procedemos a encriptar
-        //ocultamos los complementos de nuestra vista resultado 
-        document.getElementById('txt-complementario').style.display = 'none';
-        document.getElementById('muñeco-resultado').style.display = 'none';
-        //Llamamos la funcion encriptarTexto
-        encriptarTexto();
-        //Mostramos el boton copiar
-        document.getElementById('copiar').style.display = 'block';
+    } else {
+        //Ocultamos el boton copiar
+        document.getElementById('copiar').style.display = 'none';
+        //mostramos los complementos de nuestra vista resultado 
+        document.getElementById('txt-complementario').style.display = 'block';
+        document.getElementById('muñeco-resultado').style.display = 'block';
+        document.getElementById('txt-resultado').textContent = 'Ningún mensaje fue encontrado';
+        alert("Por favor, ingresa un texto sin tildes, mayusculas o caracteres especiales antes de encriptar.");
     }
 }
 
