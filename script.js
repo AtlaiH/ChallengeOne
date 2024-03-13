@@ -89,4 +89,7 @@ function copy(){
     entradaTextoEncriptado.value = '';
 }
 
-
+//funcion recargar, para tener la página de inicio tal y como cuando entramos a esta
+function recargar(){
+    location.reload();
+}

@@ -17,6 +17,9 @@ body{
     justify-content: flex-end;
     align-items: flex-start;
 }
+#logo-alura{
+    cursor: pointer;
+}
 #contenedor-encriptar{  
     width: 55%;
     display: flex;
