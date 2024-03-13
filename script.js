@@ -63,7 +63,7 @@ function encriptarTexto() {
 function desencriptarTexto(){
     // Realiza la desencriptación
     var txtResultado = document.getElementById('txt-resultado');
-    var entradaTextoEncriptado = document.getElementById('textarea-desencriptar').value.toLowerCase();
+    var entradaTextoEncriptado = document.getElementById('textarea-encriptar').value.toLowerCase();
     var resultadoDesencriptado = entradaTextoEncriptado
         .replace(/enter/g, 'e')
         .replace(/imes/g, 'i')
