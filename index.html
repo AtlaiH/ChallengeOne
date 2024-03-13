@@ -18,34 +18,37 @@
 </head>
 <!--Comienza nuestro cuerpo de la pagina web-->
 <body>
-    <div id="contenedor-logo">
-        <img src="imagenes/logo.svg" alt="alura-latam" id="logo-alura" onclick="recargar()">
+    <div class="contenedor-principal">
+        <div id="contenedor-logo">
+            <img src="imagenes/logo.svg" alt="alura-latam" id="logo-alura" onclick="recargar()">
+        </div>
+        <main id="contenedor-encriptar">
+                <textarea placeholder="Ingrese el texto aquí" id="textarea-encriptar"></textarea>
+                <div class="advertencia">
+                    <span class="zondicons--exclamation-solid"></span>
+                    <p id="alerta">Solo letras minúsculas y sin acento</p>
+                </div>
+                <div class="funcionalidades"> 
+                    <input type="button" value="Encriptar" class="btn-funcionalidades" id="btn-encriptar" onclick="validarTexto()"/>
+                    <input type="button" value="Desencriptar" class="btn-funcionalidades" id="btn-desencriptar" onclick="desencriptarTexto()" />
+                </div> 
+        </main>
+        <aside id="contenedor-resultado">
+                <img src="imagenes/kid-luffy.svg" alt="Buscando-texto" id="muñeco-resultado">
+                <textarea class="txt-encriptado" id="txt-resultado" disabled>Ningún mensaje fue encontrado</textarea>  
+                <p id="txt-complementario">favor ingresa tu texto</p>
+                <div class="btn-copiar" onclick="copy()">
+                    <button class="btn-funcionalidades" id="copiar">
+                        <img src="imagenes/copiar.svg" width="20px" height="20px">
+                        Copiar
+                    </button>
+                </div>
+        </aside>    
     </div>
-
-    <main id="contenedor-encriptar">
-            <textarea placeholder="Ingrese el texto aquí" id="textarea-encriptar"></textarea>
-            <div class="advertencia">
-                <span class="zondicons--exclamation-solid"></span>
-                <p id="alerta">Solo letras minúsculas y sin acento</p>
-            </div>
-            <div class="funcionalidades"> 
-                <input type="button" value="Encriptar" class="btn-funcionalidades" id="btn-encriptar" onclick="validarTexto()"/>
-                <input type="button" value="Desencriptar" class="btn-funcionalidades" id="btn-desencriptar" onclick="desencriptarTexto()" />
-            </div> 
-    </main>
-
-    <aside id="contenedor-resultado">
-            <img src="imagenes/kid-luffy.svg" alt="Buscando-texto" id="muñeco-resultado">
-            <textarea class="txt-encriptado" id="txt-resultado" disabled>Ningún mensaje fue encontrado</textarea>  
-            <p id="txt-complementario">favor ingresa tu texto</p>
-            <div class="btn-copiar" onclick="copy()">
-                <button class="btn-funcionalidades" id="copiar">
-                    <img src="imagenes/copiar.svg" width="20px" height="20px">
-                    Copiar
-                </button>
-            </div>
-    </aside>    
-    
+    <footer class="pie">
+            <img src="imagenes/gato-siames.png" alt="gato" title="Aqui esta el michi" id="pie-pagina">
+            Proyecto Challenge one de Alura realizado por Atlai Bonilla
+    </footer>
     <script src="script.js"></script>
 
 </body>

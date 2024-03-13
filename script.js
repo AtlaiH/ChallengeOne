@@ -73,14 +73,14 @@ function desencriptarTexto() {
     // Obtener el elemento de resultado por su ID
     var txtResultado = document.getElementById('txt-resultado');
     // Obtener el texto encriptado del textarea por su ID
-    var entradaTextoEncriptado = document.getElementById('textarea-encriptar').value.toLowerCase();
+    var entradaTextoEncriptado = document.getElementById('textarea-encriptar').value;
     // Inicializar el resultado desencriptado con el texto encriptado
     var resultadoDesencriptado = entradaTextoEncriptado;
     // Definir las palabras clave y sus reemplazos
     var palabrasClave = {
+        'ai': 'a',
         'enter': 'e',
         'imes': 'i',
-        'ai': 'a',
         'ober': 'o',
         'ufat': 'u'
     };

@@ -8,6 +8,8 @@
 body{
     margin: 10px;
     padding: 10px;
+}
+.contenedor-principal{
     display: flex;
     justify-content: space-around;
 }
@@ -83,7 +85,7 @@ body{
     border: none;
 }
 #btn-desencriptar{
-    background-color: #ec8804;
+    background-color: #00b7c4;
     color: #000000;
     border-color: #000000;
     border: 1px solid;
@@ -131,9 +133,23 @@ p{
     justify-content: center;
     align-items: center;
 }
+.pie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    font-family: "Inter", sans-serif; 
+    font-style: normal;
+}
+#pie-pagina{
+    width: 3%;
+    padding: 10px;
+    cursor: pointer;
+}
+
 /*Formato para los dispositivos moviles (TABLETS)*/
 @media screen and (max-width: 768px) {
-    body{
+    .contenedor-principal{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -160,7 +176,7 @@ p{
 
 /*Formato para los dispositivos moviles (SMARTPHONES)*/
 @media screen and (max-width: 375px) {
-    body{
+    .contenedor-principal{
         display: flex;
         flex-direction: column;
         justify-content: center;
