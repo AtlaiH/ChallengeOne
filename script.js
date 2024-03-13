@@ -6,7 +6,7 @@ document.getElementById('copiar').style.display = 'none';
 //funcion validar texto
 function validarTexto(){
      //Creamos una variable entrada de texto y Convierte todo a minúsculas
-    var entradaTexto = document.getElementById('textarea-encriptar').value.toLowerCase(); 
+    var entradaTexto = document.getElementById('textarea-encriptar').value; 
 
     // Verificamos texto no tiene tildes y no esté vacío
     if (regex.test(entradaTexto)) { // si tenemos texto entonces procedemos a encriptar
@@ -48,7 +48,7 @@ function encriptarTexto() {
     
     // Realizamos la encriptación 
     var txtResultado = document.getElementById('txt-resultado');
-    var entradaTexto = document.getElementById('textarea-encriptar').value.toLowerCase();
+    var entradaTexto = document.getElementById('textarea-encriptar').value;
     var resultado = entradaTexto
         .replace(/e/g, 'enter')
         .replace(/i/g, 'imes')
@@ -62,25 +62,36 @@ function encriptarTexto() {
 }
 
 //Funcion desencriptar-prueba
-function desencriptarTexto(){
-    // Realiza la desencriptación
-    var txtResultado = document.getElementById('txt-resultado');
-    var entradaTextoEncriptado = document.getElementById('textarea-encriptar').value.toLowerCase();
-    var resultadoDesencriptado = entradaTextoEncriptado
-        .replace(/enter/g, 'e')
-        .replace(/imes/g, 'i')
-        .replace(/ai/g, 'a')
-        .replace(/ober/g, 'o')
-        .replace(/ufat/g, 'u');
-    //Mostramos resultado
-    txtResultado.textContent = resultadoDesencriptado; 
-    ajustarTamañoTextarea(txtResultado);
-}
 
 //ajustar tamaño de texto resultado 
 function ajustarTamañoTextarea(textarea) {
     textarea.style.height = 'auto'; // Restaura la altura a 'auto' para obtener la altura deseada
     textarea.style.height = textarea.scrollHeight + 'px'; // Establece la altura según el contenido
+}
+
+function desencriptarTexto() {
+    // Obtener el elemento de resultado por su ID
+    var txtResultado = document.getElementById('txt-resultado');
+    // Obtener el texto encriptado del textarea por su ID
+    var entradaTextoEncriptado = document.getElementById('textarea-encriptar').value.toLowerCase();
+    // Inicializar el resultado desencriptado con el texto encriptado
+    var resultadoDesencriptado = entradaTextoEncriptado;
+    // Definir las palabras clave y sus reemplazos
+    var palabrasClave = {
+        'enter': 'e',
+        'imes': 'i',
+        'ai': 'a',
+        'ober': 'o',
+        'ufat': 'u'
+    };
+    // Iterar sobre las palabras clave y realizar los reemplazos
+    for (var clave in palabrasClave) {
+        var reemplazo = palabrasClave[clave];
+        resultadoDesencriptado = resultadoDesencriptado.split(clave).join(reemplazo);
+    }
+    // Mostrar el resultado desencriptado en el elemento de resultado
+    txtResultado.textContent = resultadoDesencriptado;
+    ajustarTamañoTextarea(txtResultado);
 }
 
 //funcion para copiar al portapapeles
